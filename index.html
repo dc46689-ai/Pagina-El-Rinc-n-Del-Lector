@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El rincón del lector | Librería Virtual</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== 1. NAVEGACIÓN ========== -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icono">📖</span> El Rincón del Lector
+        </div>
+
+        <nav class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contacto">Contacto</a>
+            
+            <!-- Botón para abrir el carrito -->
+            <button id="btn-abrir-carrito" class="nav-carrito-btn" type="button">
+                <span>🛒 Carrito</span>
+                <span id="contador-carrito" class="contador-badge">0</span>
+            </button>
+
+            <!-- Botón para alternar vista de favoritos -->
+            <button id="btn-ver-favoritos" class="nav-favoritos-btn" type="button">
+                <span>♥ Favoritos</span>
+                <span id="contador-favoritos" class="contador-badge">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ========== 2. PORTADA / HERO ========== -->
+    <section id="inicio" class="portada">
+        <div class="portada-contenido">
+            <span class="subtitulo-etiqueta">Librería Virtual & Boutique de Lectura</span>
+            <h1>Un refugio cálido para amantes de las buenas historias</h1>
+            <p>
+                Seleccionamos cuidadosamente cada título: desde clásicos imprescindibles y novedades
+                literarias, hasta joyas de arte, poesía e ilustración independiente.
+            </p>
+            <div class="portada-botones">
+                <a href="#catalogo" class="boton-primario">Explorar Libros</a>
+                <a href="#contacto" class="boton-secundario">Visítanos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 3. CATÁLOGO CON BUSCADOR Y FILTROS ========== -->
+    <section id="catalogo" class="seccion-catalogo">
+        <div class="encabezado-seccion">
+            <h2>Nuestra Colección</h2>
+            <p>Descubre tu próxima lectura entre nuestras categorías seleccionadas</p>
+        </div>
+
+        <!-- Barra de herramientas: Búsqueda y Categorías -->
+        <div class="barra-herramientas">
+            <div class="buscador-caja">
+                <span class="icono-lupa">🔍</span>
+                <input type="text" id="input-buscador" placeholder="Buscar por título, autor o tema...">
+            </div>
+
+            <div class="filtros-categorias" id="contenedor-categorias">
+                <button class="btn-categoria activa" data-categoria="todos">Todos</button>
+                <button class="btn-categoria" data-categoria="ficcion">Ficción & Novela</button>
+                <button class="btn-categoria" data-categoria="poesia">Poesía</button>
+                <button class="btn-categoria" data-categoria="arte">Arte & Fotografía</button>
+                <button class="btn-categoria" data-categoria="ensayo">Ensayo & Filosofía</button>
+                <button class="btn-categoria" data-categoria="juvenil">Juvenil</button>
+            </div>
+        </div>
+        
+        <!-- Contenedor del Catálogo de Libros -->
+        <div class="contenedor-tarjetas" id="contenedor-libros">
+
+            <!-- Libro 1 -->
+            <div class="tarjeta-libro" 
+                 data-id="1" 
+                 data-categoria="ficcion"
+                 data-editorial="Salamandra"
+                 data-ano="1943"
+                 data-paginas="120 págs.">
+                <div class="portada-contenedor">
+                    <img src="img/principito.jpg" alt="El Principito" loading="lazy">
+                    <button class="btn-favorito-tarjeta" title="Guardar en favoritos">♡</button>
+                </div>
+                <div class="info-libro">
+                    <span class="etiqueta-categoria tag-ficcion">Ficción</span>
+                    <h3 class="titulo-libro">El Principito</h3>
+                    <p class="autor-libro">Antoine de Saint-Exupéry</p>
+                    <p class="sinopsis-corta">Una poética narración sobre la inocencia, el amor, la amistad y el sentido de la existencia a través de los ojos de un pequeño habitante de otro asteroide.</p>
+                    <div class="tarjeta-pie">
+                        <span class="precio-libro">$195 MXN</span>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-detalles" type="button">Ver detalles</button>
+                            <button class="btn-agregar-carrito" type="button" title="Añadir al carrito">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libro 2 -->
+            <div class="tarjeta-libro" 
+                 data-id="2" 
+                 data-categoria="poesia"
+                 data-editorial="Austral"
+                 data-ano="1924"
+                 data-paginas="112 págs.">
+                <div class="portada-contenedor">
+                    <img src="img/pablo neruda.avif" alt="Veinte Poemas de Amor" loading="lazy">
+                    <button class="btn-favorito-tarjeta" title="Guardar en favoritos">♡</button>
+                </div>
+                <div class="info-libro">
+                    <span class="etiqueta-categoria tag-poesia">Poesía</span>
+                    <h3 class="titulo-libro">Veinte Poemas de Amor y una Canción Desesperada</h3>
+                    <p class="autor-libro">Pablo Neruda</p>
+                    <p class="sinopsis-corta">Uno de los poemarios más célebres y leídos de la literatura hispana; una recopilación apasionada y melancólica sobre el descubrimiento amoroso y la despedida.</p>
+                    <div class="tarjeta-pie">
+                        <span class="precio-libro">$180 MXN</span>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-detalles" type="button">Ver detalles</button>
+                            <button class="btn-agregar-carrito" type="button" title="Añadir al carrito">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libro 3 -->
+            <div class="tarjeta-libro" 
+                 data-id="3" 
+                 data-categoria="arte"
+                 data-editorial="Blume"
+                 data-ano="2018"
+                 data-paginas="192 págs.">
+                <div class="portada-contenedor">
+                    <img src="img/freddy-briones-parra-michael-freeman-el-ojo-del-fotografo.webp" alt="El Ojo del Fotógrafo" loading="lazy">
+                    <button class="btn-favorito-tarjeta" title="Guardar en favoritos">♡</button>
+                </div>
+                <div class="info-libro">
+                    <span class="etiqueta-categoria tag-arte">Arte & Fotografía</span>
+                    <h3 class="titulo-libro">El Ojo del Fotógrafo: Composición y Diseño</h3>
+                    <p class="autor-libro">Michael Freeman</p>
+                    <p class="sinopsis-corta">Manual de referencia visual indispensable enfocado en el encuadre, la geometría compositiva, el ritmo, el flujo y el manejo expresivo de la luz.</p>
+                    <div class="tarjeta-pie">
+                        <span class="precio-libro">$420 MXN</span>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-detalles" type="button">Ver detalles</button>
+                            <button class="btn-agregar-carrito" type="button" title="Añadir al carrito">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libro 4 -->
+            <div class="tarjeta-libro" 
+                 data-id="4" 
+                 data-categoria="ensayo"
+                 data-editorial="Alianza Editorial"
+                 data-ano="Siglo V a.C."
+                 data-paginas="160 págs.">
+                <div class="portada-contenedor">
+                    <img src="img/images.jpeg" alt="El Arte de la Guerra" loading="lazy">
+                    <button class="btn-favorito-tarjeta" title="Guardar en favoritos">♡</button>
+                </div>
+                <div class="info-libro">
+                    <span class="etiqueta-categoria tag-ensayo">Ensayo & Filosofía</span>
+                    <h3 class="titulo-libro">El Arte de la Guerra</h3>
+                    <p class="autor-libro">Sun Tzu</p>
+                    <p class="sinopsis-corta">Tratado clásico cuyas agudas reflexiones sobre la anticipación estratégica, la mesura y la naturaleza del conflicto humano mantienen plena relevancia.</p>
+                    <div class="tarjeta-pie">
+                        <span class="precio-libro">$150 MXN</span>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-detalles" type="button">Ver detalles</button>
+                            <button class="btn-agregar-carrito" type="button" title="Añadir al carrito">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libro 5 -->
+            <div class="tarjeta-libro" 
+                 data-id="5" 
+                 data-categoria="ficcion"
+                 data-editorial="Editorial Diana"
+                 data-ano="1967"
+                 data-paginas="496 págs.">
+                <div class="portada-contenedor">
+                    <img src="img/marquez.jpg" alt="Cien Años de Soledad" loading="lazy">
+                    <button class="btn-favorito-tarjeta" title="Guardar en favoritos">♡</button>
+                </div>
+                <div class="info-libro">
+                    <span class="etiqueta-categoria tag-ficcion">Ficción</span>
+                    <h3 class="titulo-libro">Cien Años de Soledad</h3>
+                    <p class="autor-libro">Gabriel García Márquez</p>
+                    <p class="sinopsis-corta">La mítica saga generacional de la familia Buendía en el pueblo de Macondo; la cúspide indiscutible del realismo mágico latinoamericano.</p>
+                    <div class="tarjeta-pie">
+                        <span class="precio-libro">$340 MXN</span>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-detalles" type="button">Ver detalles</button>
+                            <button class="btn-agregar-carrito" type="button" title="Añadir al carrito">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libro 6 -->
+            <div class="tarjeta-libro" 
+                 data-id="6" 
+                 data-categoria="juvenil"
+                 data-editorial="Alianza Editorial"
+                 data-ano="1951"
+                 data-paginas="288 págs.">
+                <div class="portada-contenedor">
+                    <img src="img/El Guardián entre el Centeno.jpg" alt="El Guardián entre el Centeno" loading="lazy">
+                    <button class="btn-favorito-tarjeta" title="Guardar en favoritos">♡</button>
+                </div>
+                <div class="info-libro">
+                    <span class="etiqueta-categoria tag-juvenil">Juvenil</span>
+                    <h3 class="titulo-libro">El Guardián entre el Centeno</h3>
+                    <p class="autor-libro">J.D. Salinger</p>
+                    <p class="sinopsis-corta">La voz honesta y desarmante de Holden Caulfield recorriendo Nueva York mientras lidia con la madurez, la soledad y la autenticidad personal.</p>
+                    <div class="tarjeta-pie">
+                        <span class="precio-libro">$260 MXN</span>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-detalles" type="button">Ver detalles</button>
+                            <button class="btn-agregar-carrito" type="button" title="Añadir al carrito">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mensaje cuando la búsqueda no coincide -->
+        <div id="sin-resultados" class="sin-resultados oculto">
+            <p>No encontramos ningún título que coincida con tu búsqueda.</p>
+            <button id="btn-limpiar-busqueda" class="boton-secundario" type="button">Ver todos los libros</button>
+        </div>
+    </section>
+
+    <!-- ========== 4. CONTACTO ========== -->
+    <section id="contacto" class="seccion-contacto">
+        <div class="tarjeta-contacto">
+            <h2>Hablemos de Libros</h2>
+            <p class="descripcion-contacto">
+                ¿Buscas una recomendación personalizada o apartar un título? Escríbenos o visítanos en nuestro espacio[cite: 1, 2].
+            </p>
+
+            <div class="detalles-contacto">
+                <div class="item-contacto">
+                    <span class="icono">📍</span>
+                    <div>
+                        <strong>Ubicación</strong>
+                        <p>Centro Histórico, Puebla, Pue.</p>
+                    </div>
+                </div>
+                <div class="item-contacto">
+                    <span class="icono">📸</span>
+                    <div>
+                        <strong>Instagram</strong>
+                        <p>@elrincondel_lector</p>
+                    </div>
+                </div>
+                <div class="item-contacto">
+                    <span class="icono">💬</span>
+                    <div>
+                        <strong>WhatsApp / Teléfono</strong>
+                        <p>22-13-63-75-65</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 5. MODAL DE DETALLES DEL LIBRO ========== -->
+    <div id="modal-libro" class="modal oculto">
+        <div class="modal-fondo" id="modal-fondo"></div>
+        <div class="modal-caja">
+            <button class="modal-cerrar" id="btn-cerrar-modal" type="button">&times;</button>
+            <div class="modal-cuerpo" id="modal-contenido">
+                <!-- Información inyectada dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 6. PANEL LATERAL (DRAWER) DEL CARRITO ========== -->
+    <div id="fondo-carrito" class="modal-fondo oculto"></div>
+    <aside id="drawer-carrito" class="drawer-carrito">
+        <div class="drawer-header">
+            <h3>Tu Carrito de Lectura</h3>
+            <button id="btn-cerrar-carrito" class="btn-cerrar-drawer" type="button">&times;</button>
+        </div>
+
+        <!-- Lista de libros agregados -->
+        <div id="items-carrito" class="drawer-items"></div>
+
+        <!-- Zona de suma total y botones de acción -->
+        <div class="drawer-footer">
+            <div class="total-fila">
+                <span>Total estimado:</span>
+                <strong id="carrito-total-monto">$0.00 MXN</strong>
+            </div>
+            <button id="btn-checkout-whatsapp" class="btn-checkout" type="button">Pedir por WhatsApp</button>
+            <button id="btn-vaciar-carrito" class="btn-vaciar" type="button">Vaciar carrito</button>
+        </div>
+    </aside>
+
+    <!-- ========== 7. PIE DE PÁGINA ========== -->
+    <footer class="pie-pagina">
+        <p>&copy; 2026 El Rincón del Lector. Libros, café e historias que trascienden.</p>
+    </footer>
+
+    <!-- Script de interactividad -->
+    <script src="script.js"></script>
+</body>
+
+</html>
